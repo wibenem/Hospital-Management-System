@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Dtos.Patients
 {
-    public class CreatePatientsDto
+    public class CreatePatientDto
     {
         public string PatientsName { get; set; }
-        public string Descripton { get; set; }
+        public string Height { get; set; }
+        public string Weight { get; set; }
+        public string Address { get; set; }
+
     }
 }

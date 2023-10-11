@@ -5,11 +5,11 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem", "Hospital Management System\HospitalManagementSystem.csproj", "{17E2903B-9110-4B15-8128-9004E6136B4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystems.BusinesLogic", "HospitalManagementSystems.BusinesClass\HospitalManagementSystems.BusinesLogic.csproj", "{27358703-C569-4CAB-9F2D-BA97EEBD6C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.BusinessLogic", "HospitalManagementSystems.BusinesClass\HospitalManagementSystem.BusinessLogic.csproj", "{27358703-C569-4CAB-9F2D-BA97EEBD6C94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystems.DataAccess", "HospitalManagementSystem.DataAccess\HospitalManagementSystems.DataAccess.csproj", "{FE3F1213-F597-46C1-92C2-01F354F24CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.DataAccess", "HospitalManagementSystem.DataAccess\HospitalManagementSystem.DataAccess.csproj", "{FE3F1213-F597-46C1-92C2-01F354F24CC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystems.Domain", "HospitalManagementSystems.Domain\HospitalManagementSystems.Domain.csproj", "{3716101E-52E3-44DF-8DF8-C8ED34C68A09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.Domain", "HospitalManagementSystems.Domain\HospitalManagementSystem.Domain.csproj", "{3716101E-52E3-44DF-8DF8-C8ED34C68A09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

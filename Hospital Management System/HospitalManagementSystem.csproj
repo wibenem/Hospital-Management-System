@@ -24,9 +24,9 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HospitalManagementSystem.DataAccess\HospitalManagementSystems.DataAccess.csproj" />
-    <ProjectReference Include="..\HospitalManagementSystems.BusinesClass\HospitalManagementSystems.BusinesLogic.csproj" />
-    <ProjectReference Include="..\HospitalManagementSystems.Domain\HospitalManagementSystems.Domain.csproj" />
+    <ProjectReference Include="..\HospitalManagementSystem.DataAccess\HospitalManagementSystem.DataAccess.csproj" />
+    <ProjectReference Include="..\HospitalManagementSystems.BusinesClass\HospitalManagementSystem.BusinessLogic.csproj" />
+    <ProjectReference Include="..\HospitalManagementSystems.Domain\HospitalManagementSystem.Domain.csproj" />
   </ItemGroup>
 
 </Project>

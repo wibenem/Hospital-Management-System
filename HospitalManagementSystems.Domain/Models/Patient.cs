@@ -14,5 +14,7 @@ namespace HospitalManagementSystems.Domain.Models
         public float Height { get; set; }
         public float Weight { get; set; }
         public string BloodGroup { get; set; }
+        
+        
     }
 }

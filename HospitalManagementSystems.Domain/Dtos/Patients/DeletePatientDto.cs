@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Dtos.Patients
 {
-    public class UpdatePatientsDto
+    public class DeletePatientDto
     {
         public int Id { get; set; }
-        public string PatientsName { get; set; }
-        public string Descripton { get; set; }
     }
 }
