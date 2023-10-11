@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    internal class AdminStaffs
+    internal class MedicalSupportStaff
     {
         [Key]
         public int Id { get; set; }

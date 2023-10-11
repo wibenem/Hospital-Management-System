@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    internal class MedicalSupportStaffs
+    internal class Patient
     {
         [Key]
         public int Id { get; set; }
-        public string Role { get; set; }
-        public DateTime? DateEmployed { get; set; }
+        public float Height { get; set; }
+        public float Weight { get; set; }
+        public string BloodGroup { get; set; }
     }
 }
