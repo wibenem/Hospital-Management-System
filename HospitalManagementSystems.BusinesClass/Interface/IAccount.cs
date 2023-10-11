@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.BusinesLogic.Interface
 {
-    internal interface IAccount
-    {
-    }
+
 }
+

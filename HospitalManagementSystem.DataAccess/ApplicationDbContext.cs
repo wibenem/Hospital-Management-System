@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HospitalManagementSystems.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.DataAccess.Migrations
+namespace HospitalManagementSystems.DataAccess
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
@@ -30,11 +31,6 @@ namespace HospitalManagementSystems.DataAccess.Migrations
         public DbSet<Patient> Patients { get; set; }
         public DbSet<AdminStaff> AdminStaffs { get; set; }
         public DbSet<MedicalSupportStaff> MedicalSupportStaffs { get; set; }
-        DbSet<Doctor> IApplicationDbContext.Doctors { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        DbSet<AdminStaff> IApplicationDbContext.AdminStaffs { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        DbSet<Patient> IApplicationDbContext.Patients { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        DbSet<MedicalSupportStaff> IApplicationDbContext.MedicalSupportStaffs { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             return base.SaveChangesAsync(cancellationToken);
@@ -43,6 +39,13 @@ namespace HospitalManagementSystems.DataAccess.Migrations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //modelBuilder.Entity<AdminStaff>(f =>
+            //{
+            //    f.HasKey(e => e.Id);
+            //    f.HasIndex(e => new { e.TenantId });
+            //    f.HasIndex(e => new { e.TenantId, e.ID_Other });
+            //});
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

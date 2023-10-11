@@ -1,7 +1,5 @@
-﻿using Dapper;
-using HospitalManagementSystems.Domain.Models;
+﻿using HospitalManagementSystems.Domain.Models;
 using HospitalManagementSystems.Domain.Utility;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +8,4 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.DataAccess.Database
-{
-   
-}
-
+{ }

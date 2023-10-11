@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.DataAccess.Migrations
+namespace HospitalManagementSystems.DataAccess.Database
 {
-    public class MedicalSupportStaff
+    internal class MedicalSupportStaffDbService
     {
     }
 }

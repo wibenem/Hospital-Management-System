@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagementSystems.Domain.Models
 {
-    internal class keyAttribute : Attribute
+    public class keyAttribute : Attribute
     {
     }
 }

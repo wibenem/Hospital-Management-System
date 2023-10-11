@@ -1,13 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HospitalManagementSystems.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.DataAccess.Migrations
+namespace HospitalManagementSystems.DataAccess
 {
-    
+
     public interface IApplicationDbContext
     {
         DbSet<Doctor> Doctors { get; set; }
