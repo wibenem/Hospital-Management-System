@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    internal class Doctor
+    public class Doctor
     {
         [Key]
+        public string DoctorName { get; set; }
         public int Id { get; set; }
         public string Specialty { get; set; }
         public string Grade { get; set; }

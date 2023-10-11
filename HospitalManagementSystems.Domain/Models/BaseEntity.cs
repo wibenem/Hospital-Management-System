@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
         public String? FullNames { get; set; }
         public String? MaritalStatus { get; set; }
