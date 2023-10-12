@@ -1,4 +1,9 @@
+using HospitalManagementSystem.BusinessLogic.Interface;
+using HospitalManagementSystem.BusinessLogic.Repository;
+using HospitalManagementSystems.BusinesLogic.Interface;
+using HospitalManagementSystems.BusinesLogic.Repository;
 using HospitalManagementSystems.DataAccess;
+using HospitalManagementSystems.Domain.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
@@ -44,8 +49,8 @@ namespace Hospital_Management_System
 
 
             builder.Services.AddScoped<HospitalManagementSystems.BusinesLogic.Interface.IPatient, HospitalManagementSystems.BusinesLogic.Repository.PatientRepo >();
-           
-
+            builder.Services.AddScoped<IAdminStaff, AdminStaffRepo>();
+            builder.Services.AddScoped<IMedicalSupportStaff, MedicalSupportStaffRepo>();
 
             var app = builder.Build();
 

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    public class Patient
+    public class Patient : BaseEntity
     {
-        [Key]
+        
         public int Id { get; set; }
-        public float Height { get; set; }
-        public float Weight { get; set; }
+        public double Height { get; set; }
+        public double Weight { get; set; }
         public string BloodGroup { get; set; }
         
         

@@ -8,8 +8,9 @@ namespace HospitalManagementSystems.Domain.Dtos.MedicalSupportStaffs
 {
     public class CreateMedicalSupportStaffDto
     {
-        public string MedicalSupportStaffsName { get; set; }
+        public string Id { get; set; }
         public string Role { get; set; }
+        
         public DateTime DateEmployed { get; set; }
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    public class MedicalSupportStaff
+    public class MedicalSupportStaff : BaseEntity
     {
-        [Key]
+        
         public int Id { get; set; }
         public string Role { get; set; }
         public DateTime? DateEmployed { get; set; }

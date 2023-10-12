@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Models
 {
-    public class Doctor
+    public class Doctor : BaseEntity
     {
         [Key]
         public int Id { get; set; }

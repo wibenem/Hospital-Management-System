@@ -9,7 +9,7 @@ namespace HospitalManagementSystems.Domain.Dtos.MedicalSupportStaffs
     public class UpdateMedicalSupportStaffDto
     {
         public int Id { get; set; }
-        public string MedicalSupportStaffsName { get; set; }
+       
         public string Role { get; set; }
         public DateTime DateEmployed { get; set; }
 

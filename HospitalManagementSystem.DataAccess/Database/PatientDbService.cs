@@ -23,13 +23,20 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[InsertInto_Patient]";
+                var query = @"[InsertInto_Patients]";
                 var param = new
                 {
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
                     Height = request.Height,
                     Weight = request.Weight,
                     BloodGroup = request.BloodGroup,
-                   
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
             }
@@ -88,6 +95,14 @@ namespace HospitalManagementSystems.DataAccess.Database
                 var query = @"[Update_Patient]";
                 var param = new
                 {
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
                     Height = request.Height,
                     Weight = request.Weight,
                     BloodGroup = request.BloodGroup,
