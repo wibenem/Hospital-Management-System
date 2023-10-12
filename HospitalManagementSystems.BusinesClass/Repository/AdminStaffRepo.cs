@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using HospitalManagementSystem.BusinessLogic.Interface;
 using HospitalManagementSystems.BusinesLogic.Interface;
 using HospitalManagementSystems.DataAccess.Database;
+using HospitalManagementSystems.Domain.Dtos.AdminStaffs;
 using HospitalManagementSystems.Domain.Dtos.Patients;
 using HospitalManagementSystems.Domain.Models;
 using Newtonsoft.Json;
@@ -11,24 +13,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.BusinesLogic.Repository
+namespace HospitalManagementSystem.BusinessLogic.Repository
 {
-    public class PatientRepo : IPatient
+    public class AdminStaffRepo : IAdminStaff
     {
         private readonly IDbConnection _connection;
-        private readonly PatientDbService service;
+        private readonly AdminStaffDbService service;
         private readonly IMapper _mapper;
-        public PatientRepo(IDbConnection connection, IMapper mapper)
+        public AdminStaffRepo(IDbConnection connection, IMapper mapper)
         {
             _connection = connection;
             _mapper = mapper;
-            service = new PatientDbService(connection);
+            service = new AdminStaffDbService(connection);
         }
-        public async Task<APIResponse<CreatePatientDto>> CreatePatient(CreatePatientDto request)
+        public async Task<APIResponse<CreateAdminStaffDto>> CreateAdminStaff(CreateAdminStaffDto request)
         {
-            var response = new APIResponse<CreatePatientDto>();
-            var model = _mapper.Map<Patient>(request);
-            var result = await service.CreatePatient(model);
+            var response = new APIResponse<CreateAdminStaffDto>();
+            var model = _mapper.Map<AdminStaff>(request);
+            var result = await service.CreateAdminStaff(model);
 
             if (result == 1)
             {
@@ -49,15 +51,15 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
             return response;
         }
 
-        public Task<APIResponse<CreatePatientDto>> CreatePatients(CreatePatientDto request)
+        public Task<APIResponse<CreateAdminStaffDto>> CreateAdminStaffs(CreateAdminStaffDto request)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<APIListResponse3<Patient>> GetPatient(int pageNumber, int pageSize)
+        public async Task<APIListResponse3<AdminStaff>> GetAdminStaff(int pageNumber, int pageSize)
         {
-            var response = new APIListResponse3<Patient>();
-            var result = await service.GetPatient(pageNumber, pageSize);
+            var response = new APIListResponse3<AdminStaff>();
+            var result = await service.GetAdminStaff(pageNumber, pageSize);
             if (result != null)
             {
                 if (result.Data.Count() > 0)
@@ -90,10 +92,10 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
             return response;
         }
 
-        public async Task<APIResponse<Patient>> GetSinglePatient(int Id)
+        public async Task<APIResponse<AdminStaff>> GetSingleAdminStaff(int Id)
         {
-            var response = new APIResponse<Patient>();
-            var result = await service.SinglePatient(Id);
+            var response = new APIResponse<AdminStaff>();
+            var result = await service.SingleAdminStaff(Id);
 
             if (result != null)
             {
@@ -119,11 +121,11 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
 
 
 
-        public async Task<APIResponse<UpdatePatientDto>> UpdatePatient(UpdatePatientDto request)
+        public async Task<APIResponse<UpdateAdminStaffDto>> UpdateAdminStaff(UpdateAdminStaffDto request)
         {
-            var response = new APIResponse<UpdatePatientDto>();
-            var model = _mapper.Map<Patient>(request);
-            var result = await service.UpdatePatient(model);
+            var response = new APIResponse<UpdateAdminStaffDto>();
+            var model = _mapper.Map<AdminStaff>(request);
+            var result = await service.UpdateAdminStaff(model);
 
             if (result == 1)
             {

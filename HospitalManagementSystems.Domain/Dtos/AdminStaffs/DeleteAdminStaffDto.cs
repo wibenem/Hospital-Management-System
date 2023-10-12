@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Dtos.AdminStaffs
 {
-    public class CreateAdminStaffsDto
+    public class DeleteAdminStaffDto
     {
-        public string AdminStaffsName { get; set; }
-        public string Descripton { get; set; }
+        public int Id { get; set; }
     }
 }

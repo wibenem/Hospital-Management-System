@@ -10,6 +10,7 @@ namespace HospitalManagementSystems.Domain.Dtos.Doctors
     {
         public int Id { get; set; }
         public string DoctorsName { get; set; }
-        public string Descripton { get; set; }
+        public string Specialty { get; set; }
+        public DateTime DateEmployed{ get; set; }
     }
 }

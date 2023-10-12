@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Dtos.MedicalSupportStaffs
 {
-    public class DeleteMedicalSupportStaffsDto
+    public class CreateMedicalSupportStaffDto
     {
-        public int Id { get; set; }
+        public string MedicalSupportStaffsName { get; set; }
+        public string Role { get; set; }
+        public DateTime DateEmployed { get; set; }
     }
 }

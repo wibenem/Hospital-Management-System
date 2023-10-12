@@ -8,7 +8,8 @@ namespace HospitalManagementSystems.Domain.Dtos.Doctors
 {
     public class CreateDoctorsDto
     {
-        public string DoctorsName { get; set; }
-        public string Descripton { get; set; }
+        public string Specialty { get; set; }
+        public string Grade { get; set; }
+        public DateTime? DateEmployed { get; set; }
     }
 }

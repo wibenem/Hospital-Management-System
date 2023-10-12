@@ -43,8 +43,8 @@ namespace Hospital_Management_System
 
 
 
-            builder.Services.AddScoped<HospitalManagementSystems.BusinesLogic.Interface.IPatient, HospitalManagementSystems.BusinesLogic.Repository.PatientRepo>();
-
+            builder.Services.AddScoped<HospitalManagementSystems.BusinesLogic.Interface.IPatient, HospitalManagementSystems.BusinesLogic.Repository.PatientRepo >();
+           
 
 
             var app = builder.Build();

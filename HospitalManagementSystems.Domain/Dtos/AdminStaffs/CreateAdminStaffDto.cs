@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystems.Domain.Dtos.AdminStaffs
 {
-    public class UpdateAdminStaffsDto
+    public class CreateAdminStaffDto
     {
-        public int Id { get; set; }
-        public string AdminStaffsName { get; set; }
-        public string Descripton { get; set; }
+        public string AdminStaffName { get; set; }
+        public string Role { get; set; }
+        public DateTime? DateEmployed { get; set; }
     }
 }
