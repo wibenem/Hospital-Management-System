@@ -51,7 +51,7 @@ namespace Hospital_Management_System
             builder.Services.AddScoped<HospitalManagementSystems.BusinesLogic.Interface.IPatient, HospitalManagementSystems.BusinesLogic.Repository.PatientRepo >();
             builder.Services.AddScoped<IAdminStaff, AdminStaffRepo>();
             builder.Services.AddScoped<IMedicalSupportStaff, MedicalSupportStaffRepo>();
-
+            builder.Services.AddScoped<IDoctor, DoctorRepo>();
             var app = builder.Build();
 
 

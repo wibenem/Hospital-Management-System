@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HospitalManagementSystems.BusinesLogic.Interface;
 using HospitalManagementSystems.DataAccess.Database;
+using HospitalManagementSystems.Domain.Dtos.Doctors;
 using HospitalManagementSystems.Domain.Dtos.Patients;
 using HospitalManagementSystems.Domain.Models;
 using Newtonsoft.Json;
@@ -11,24 +12,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.BusinesLogic.Repository
+namespace HospitalManagementSystem.BusinessLogic.Repository
 {
-    public class PatientRepo : IPatient
+    public class DoctorRepo : IDoctor
     {
         private readonly IDbConnection _connection;
-        private readonly PatientDbService service;
+        private readonly DoctorDbService service;
         private readonly IMapper _mapper;
-        public PatientRepo(IDbConnection connection, IMapper mapper)
+        public DoctorRepo(IDbConnection connection, IMapper mapper)
         {
             _connection = connection;
             _mapper = mapper;
-            service = new PatientDbService(connection);
+            service = new DoctorDbService(connection);
         }
-        public async Task<APIResponse<CreatePatientDto>> CreatePatient(CreatePatientDto request)
+        public async Task<APIResponse<CreateDoctorDto>> CreateDoctor(CreateDoctorDto request)
         {
-            var response = new APIResponse<CreatePatientDto>();
-            var model = _mapper.Map<Patient>(request);
-            var result = await service.CreatePatient(model);
+            var response = new APIResponse<CreateDoctorDto>();
+            var model = _mapper.Map<Doctor>(request);
+            var result = await service.CreateDoctor(model);
 
             if (result == 1)
             {
@@ -49,15 +50,15 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
             return response;
         }
 
-        public Task<APIResponse<CreatePatientDto>> CreatePatients(CreatePatientDto request)
+        public Task<APIResponse<CreateDoctorDto>> CreateDoctors(CreateDoctorDto request)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<APIListResponse3<Patient>> GetPatient(int pageNumber, int pageSize)
+        public async Task<APIListResponse3<Doctor>> GetDoctor(int pageNumber, int pageSize)
         {
-            var response = new APIListResponse3<Patient>();
-            var result = await service.GetPatient(pageNumber, pageSize);
+            var response = new APIListResponse3<Doctor>();
+            var result = await service.GetDoctor(pageNumber, pageSize);
             if (result != null)
             {
                 if (result.Data.Count() > 0)
@@ -90,10 +91,10 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
             return response;
         }
 
-        public async Task<APIResponse<Patient>> GetSinglePatient(int Id)
+        public async Task<APIResponse<Doctor>> GetSingleDoctor(int Id)
         {
-            var response = new APIResponse<Patient>();
-            var result = await service.SinglePatient(Id);
+            var response = new APIResponse<Doctor>();
+            var result = await service.SingleDoctor(Id);
 
             if (result != null)
             {
@@ -119,11 +120,11 @@ namespace HospitalManagementSystems.BusinesLogic.Repository
 
 
 
-        public async Task<APIResponse<UpdatePatientDto>> UpdatePatient(UpdatePatientDto request)
+        public async Task<APIResponse<UpdateDoctorDto>> UpdateDoctor(UpdateDoctorDto request)
         {
-            var response = new APIResponse<UpdatePatientDto>();
-            var model = _mapper.Map<Patient>(request);
-            var result = await service.UpdatePatient (model);
+            var response = new APIResponse<UpdateDoctorDto>();
+            var model = _mapper.Map<Doctor>(request);
+            var result = await service.UpdateDoctor(model);
 
             if (result == 1)
             {

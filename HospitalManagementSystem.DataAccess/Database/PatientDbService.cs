@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,7 +54,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             Patient Patient = new Patient();
             try
             {
-                var query = @"[GetPatient]";
+                var query = @"[GetPatients]";
                 var param = new { Id = Id };
                 return await _connection.QueryFirstAsync<Patient>(query, param, commandType: CommandType.StoredProcedure);
             }
@@ -92,9 +93,13 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[Update_Patient]";
-                var param = new
+                var query = @"[Update_Patients]";
+                var param = new 
                 {
+                    Id  = request.Id, 
+                    Height = request.Height,
+                    Weight = request.Weight,
+                    BloodGroup = request.BloodGroup,
                     FullNames = request.FullNames,
                     MaritalStatus = request.MaritalStatus,
                     Age = request.Age,
@@ -102,10 +107,7 @@ namespace HospitalManagementSystems.DataAccess.Database
                     Phone = request.Phone,
                     Email = request.Email,
                     Address = request.Address,
-                    Username = request.UserName,
-                    Height = request.Height,
-                    Weight = request.Weight,
-                    BloodGroup = request.BloodGroup,
+                    UserName = request.UserName,
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
             }

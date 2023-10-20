@@ -23,9 +23,17 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[InsertInto_Doctor]";
+                var query = @"[InsertInto_Doctors]";
                 var param = new
                 {
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    UserName = request.UserName,
                     Specialty = request.Specialty,
                     Grade = request.Grade,
                     DateEmployed = request.DateEmployed,
@@ -46,7 +54,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             Doctor Doctor = new Doctor();
             try
             {
-                var query = @"[GetDoctor]";
+                var query = @"[GetDoctors]";
                 var param = new { Id = Id };
                 return await _connection.QueryFirstAsync<Doctor>(query, param, commandType: CommandType.StoredProcedure);
             }
@@ -65,7 +73,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             var response = new APIListResponse3<Doctor>();
             try
             {
-                var query = @"[GetAllDoctor]";
+                var query = @"[GetAllDoctors]";
                 var param = new { pageNumber = pageNumber, pageSize = pageSize };
                 var result = await _connection.QueryAsync<Doctor>(query, param, commandType: CommandType.StoredProcedure);
                 response.Data = PagedList<Doctor>.ToPagedList(result, pageNumber, pageSize);
@@ -85,9 +93,17 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[Update_Doctor]";
+                var query = @"[Update_Doctors]";
                 var param = new
                 {
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    UserName = request.UserName,
                     Specialty = request.Specialty,
                     Grade = request.Grade,
                     DateEmployed = request.DateEmployed,

@@ -10,6 +10,7 @@ namespace HospitalManagementSystems.Domain.Dtos.Patients
     public class UpdatePatientDto
     {
         
+        public int Id { get; set; }
         public String FullNames { get; set; }
         public String? MaritalStatus { get; set; }
         public int? Age { get; set; }

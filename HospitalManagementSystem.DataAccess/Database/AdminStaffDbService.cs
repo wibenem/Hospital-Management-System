@@ -23,11 +23,19 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[InsertInto_AdminStaff]";
+                var query = @"[InsertInto_AdminStaffs]";
                 var param = new
                 {
                     Role = request.Role,
                     DateEmployed = request.DateEmployed,
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
 
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
@@ -45,7 +53,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             AdminStaff AdminStaff = new AdminStaff();
             try
             {
-                var query = @"[GetAdminStaff]";
+                var query = @"[GetAdminStaffs]";
                 var param = new { Id = Id };
                 return await _connection.QueryFirstAsync<AdminStaff>(query, param, commandType: CommandType.StoredProcedure);
             }
@@ -84,12 +92,19 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[Update_AdminStaff]";
+                var query = @"[Update_AdminStaffs]";
                 var param = new
                 {
                     Role = request.Role,
                     DateEmployed = request.DateEmployed,
-                    
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
             }

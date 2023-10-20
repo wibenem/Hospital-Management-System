@@ -23,11 +23,19 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[InsertInto_MedicalSupportStaff]";
+                var query = @"[InsertInto_MedicalSupportStaffs]";
                 var param = new
                 {
                     Role = request.Role,
                     DateEmployed = request.DateEmployed,
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
 
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
@@ -45,7 +53,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             MedicalSupportStaff MedicalSupportStaff = new MedicalSupportStaff();
             try
             {
-                var query = @"[GetMedicalSupportStaff]";
+                var query = @"[GetMedicalSupportStaffs]";
                 var param = new { Id = Id };
                 return await _connection.QueryFirstAsync<MedicalSupportStaff>(query, param, commandType: CommandType.StoredProcedure);
             }
@@ -64,7 +72,7 @@ namespace HospitalManagementSystems.DataAccess.Database
             var response = new APIListResponse3<MedicalSupportStaff>();
             try
             {
-                var query = @"[GetAllMedicalSupportStaff]";
+                var query = @"[GetAllMedicalSupportStaffs]";
                 var param = new { pageNumber = pageNumber, pageSize = pageSize };
                 var result = await _connection.QueryAsync<MedicalSupportStaff>(query, param, commandType: CommandType.StoredProcedure);
                 response.Data = PagedList<MedicalSupportStaff>.ToPagedList(result, pageNumber, pageSize);
@@ -84,12 +92,20 @@ namespace HospitalManagementSystems.DataAccess.Database
         {
             try
             {
-                var query = @"[Update_MedicalSupportStaff]";
+                var query = @"[Update_MedicalSupportStaffs]";
                 var param = new
                 {
                     Role = request.Role,
                     DateEmployed = request.DateEmployed,
-                   
+                    FullNames = request.FullNames,
+                    MaritalStatus = request.MaritalStatus,
+                    Age = request.Age,
+                    Gender = request.Gender,
+                    Phone = request.Phone,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Username = request.UserName,
+
                 };
                 return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
             }

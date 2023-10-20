@@ -5,13 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystems.Domain.Dtos.AdminStaffs
+namespace HospitalManagementSystems.Domain.Dtos.Doctors
 {
-    public class UpdateAdminStaffDto
+    public class UpdateDoctorDto
     {
         public int Id { get; set; }
-        public string Role { get; set; }
-        public DateTime? DateEmployed { get; set; }
         public String FullNames { get; set; }
         public String? MaritalStatus { get; set; }
         public int? Age { get; set; }
@@ -20,5 +18,8 @@ namespace HospitalManagementSystems.Domain.Dtos.AdminStaffs
         public string Email { get; set; }
         public string Address { get; set; }
         public string? UserName { get; set; }
+        public string Specialty { get; set; }
+        public string Grade { get; set; }
+        public DateTime DateEmployed { get; set; }
     }
 }
